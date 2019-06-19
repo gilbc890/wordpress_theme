@@ -20,38 +20,77 @@ get_header();
     <section class="landing">
         <article class="travel">
             <div class="travel-wrap">
-                <div class="travel-img-wrap">
-    <?php
-        $travel_query = new WP_Query('category_name=Travel')
-    ?>
-    <?php
-         if ( $travel_query->have_posts() ) :
+                <?php
+                    $travel_query = new WP_Query('category_name=Travel&&posts_per_page=3');
+                    $i=0;
+                ?>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+                <?php
+                while ( 
+                    $travel_query->have_posts() ) :
                     $travel_query->the_post();
-    ?>
-                   
-                    <a href="<?php 
-                    the_permalink()
-                 ?>" class="travel-img">
-        <?php the_post_thumbnail(); ?>
-                    </a>    
-                </div>
                 
-    <div class="post-wrap">
-        <h2 class="post-title-wrap">
-            <a href="<?php the_permalink();
-                 ?>"><?php the_title(); ?>
-            </a>
-        </h2>
-            <a href="<?php the_permalink();
-                 ?>"><?php 
-        the_excerpt();
-    ?>
-            </a>
-        
-    </div>            
-<?php                    
+                ?>
+    <div class="carousel-item 
+    <?php if($i===0):echo 'active';
     endif;
+    ?>
+    ">
+        <div class="travel-carousel-wrap">
+            <div class="travel-img-wrap">
+                <a href="
+                <?php 
+                    the_permalink()
+                ?>
+                " class="travel-img">
+                    <?php            the_post_thumbnail(); 
+                    ?>
+                </a>    
+            </div>
+            <div class="post-wrap">
+                <h2 class="post-title-wrap">
+                    <a href="<?php the_permalink();
+                     ?>"><?php the_title(); ?>
+                    </a>
+                </h2>
+                <a href="<?php the_permalink();
+                     ?>"><?php 
+            the_excerpt();
+        ?>
+                </a>
+            </div>
+        </div>            
+    </div>
+      <?php
+    $i++;
+    endwhile;
 ?>
+
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>               
+               
+               
+               
+               
+               
+               
+               
+                
             </div>
         </article>
         <article class="blog">

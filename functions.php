@@ -176,3 +176,19 @@ function wpdocs_excerpt_more( $more ) {
     return '...';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+
+//bootstrap
+function pwwp_enqueue_my_scripts() {
+    // jQuery is stated as a dependancy of bootstrap-js - it will be loaded by WordPress before the BS scripts 
+    wp_enqueue_script( 'bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), true); // all the bootstrap javascript goodness
+}
+add_action('wp_enqueue_scripts', 'pwwp_enqueue_my_scripts');
+
+function pwwp_enqueue_my_styles() {
+    wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
+
+    // this will add the stylesheet from it's default theme location if your theme doesn't already
+    //wp_enqueue_style( 'my-style', get_template_directory_uri() . '/style.css');
+}
+add_action('wp_enqueue_scripts', 'pwwp_enqueue_my_styles');

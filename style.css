@@ -1009,6 +1009,10 @@ h2{
 }
 a{
     text-decoration: none;
+    color:black!important;
+}
+a:hover{
+    color:black!important;
 }
 /* Header */
 .nav{
@@ -1023,35 +1027,35 @@ a{
     display: inline-block;
     margin-left:10%;
 }
-.nav>li>a{
-    color:#0A4273;
-}
 .nav .logo{
     width:80px;
     margin:0;
-    margin-right:40%;
+    margin-right:30%;
     padding-top:1%;
     padding-bottom:1%;
+    margin-left:10%;
 }
 /* Front Page */
 .travel{
     background:#6BBFBF;
 }
 .travel-wrap{
-    padding:5% 10%;
+    padding:5% 10% 10%;
     display:flex;
+    justify-content: space-between;
+}
+.travel-carousel-wrap{
+    display: flex;
     justify-content: space-between;
 }
 .travel .post-title-wrap{
     margin:0;
-    color:#0A4273;
 }
 .travel .post-title-wrap>a{
     font-family: 'Merriweather', serif;
 }
 .travel-wrap .post-wrap>a>p{
     margin:0;
-    color:#0A4273;
 }
 .travel-img-wrap{
     display: inline-block;
@@ -1072,6 +1076,19 @@ a{
 .post-title-wrap{
     text-align:center;
 }
+.carousel-indicators{
+    margin-bottom:-5%;
+}
+.carousel-control-prev{
+    margin-left:-15%;
+}
+.carousel-control-next{
+    margin-right:-15%;
+}
+.carousel-indicators li{
+    background-color:#F2F0E4!important;
+}
+
 .landing .blog{
     background:#1B7EA6;
     padding:0 10%;
@@ -1081,12 +1098,10 @@ a{
     display: flex;
     justify-content: space-between;
     padding-bottom:10%;
-    color:#0A4273;
 }
 .blog .blog-title{
     margin-top:0;
     padding-top:10%;
-    color:#0A4273;
 }
 .blog .article-post-wrap{
     width:32%;
@@ -1110,7 +1125,6 @@ a{
 }
 .list-travel-title{
     margin:0;
-    color:#0A4273;
 }
 .list-travel-post-wrap{
     display:flex;
@@ -1125,7 +1139,6 @@ a{
     display: inline-block;
     width:60%;
     margin-left:5%;
-    color:#0A4273;
 }
 .list-travel .thumbnail-wrap > img{
     width:100%;
@@ -1134,8 +1147,7 @@ a{
     padding:0 0 5% 0;
 }
 .list-travel .pagination{
-    text-align: center;
-    color:#0A4273;
+    justify-content: center;
 }
 .list-travel .page-numbers:visited{
     color:inherit;
@@ -1178,7 +1190,6 @@ a{
     font-size:1.3rem;
     margin:0;
     text-align: center;
-    color:#0A4273;
 }
 .travel-post-comments{
     font-size:0.9rem;
@@ -1187,9 +1198,6 @@ a{
     text-align: center;
     font-weight: lighter;
 }
-.travel-post-content{
-    color:#0A4273;
-}
 .pagination-previous{
     padding:0 10%;
 }
@@ -1197,12 +1205,16 @@ a{
     text-align:right;
     padding:0 10%;
 }
+.page-numbers{
+    font-size:1.3em;
+    margin-right:2.5%;
+}
 /* articles page */
 .articles-site-main{
     background:#F2F0E4;
 }
 .articles-category-wrap{
-    padding:0 10%;
+    padding:0 10% 10%;
 }
 .articles-category-wrap>a{
     display: inline-block;
@@ -1211,7 +1223,6 @@ a{
 .articles-site-main .entry-content{
     padding:5% 10%;
     margin:0;
-    color:#0A4273;
 }
 .articles-category-wrap >a >img{       width:80%;
 }
@@ -1221,7 +1232,6 @@ a{
 }
 .article-post-title{
     margin:0;
-    color:#0A4273;
 }
 .article-post-comments{
     font-size:0.8rem;
@@ -1229,13 +1239,16 @@ a{
     margin:0;
     font-weight: lighter;
 }
-.article-post-content{
-    color:#0A4273;
+.articles-site-main .entry-footer{
+    text-align: center;
 }
 /* single post*/
+.single-site-main{
+    background:#F2F0E4;
+    padding:10%;
+}
 .single-post-wrapper{
     width:80%;
-    padding:0 10%;
 }
 .single-post-wrapper>article{
     padding-bottom:10%;
@@ -1273,6 +1286,28 @@ a{
 .comment{
     margin-bottom:5%;
 }
+.comment-metadata{
+    display: inline-block;
+    float: right;
+}
+.comments-title{
+    color:#0F6CA6;
+}
+.comment-author{
+    display: inline-block;
+    color:#0A4273;
+}
+.comment-content{
+    color:#0F6CA6;
+    font-size:1.3em;
+}
+.comment-awaiting-moderation{
+    display: block;
+}
+.reply{
+    color:#0A4273;
+    text-align: right;
+}
 /* About */
 .about-site-main{
     background-color:#F2F0E4;
@@ -1284,15 +1319,12 @@ a{
 .about-site-main .entry-header{
     text-align:center;
     padding-top:10%;
-    color:#0A4273;
 }
 .about-site-main .entry-content{
     padding:0 10% 10%;
-    color:#0A4273;
 }
 .about-site-main .about-wrap{
     padding:10%;
-    color:#0A4273;
 }
 /*footer*/
 .footer-wrap{
@@ -1309,9 +1341,11 @@ a{
     text-align: center;
     padding-top:10%;
     margin:0;
+    color:#F2F0E4;
 }
 .footer-text{
     text-align: center;
+    color:#F2F0E4;
 }
 .footer-social{
     display: flex;
@@ -1320,6 +1354,13 @@ a{
     margin:0;
     padding:0;
     padding-bottom:10%;
+    color:#F2F0E4;
+}
+.fab{
+   color:#F2F0E4; 
+}
+.fab:hover{
+    color:#6BBFBF;
 }
 .footer-social>li{
     margin:2.5% 1%;
